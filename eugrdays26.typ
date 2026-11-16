@@ -56,7 +56,7 @@
     ),
   )
   set text(size: 18pt, font: "Eau")
-  set list(spacing: 1.15em)
+  set list(spacing: 0.85em)
 
   set page(background: image("assets/title-bg-optim.svg"))
   slide[
