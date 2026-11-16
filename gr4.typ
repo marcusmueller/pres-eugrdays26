@@ -10,24 +10,29 @@
   #sect[Intro]
   == Overview & Introduction
 
+  ==== Philosophy part
   - Who am I?
   - Why am I here?
   - No seriously, why am I still here?
+
+  ==== Update Part
+  - News from GNU Radio 4
+  - News from GNU Radio 3
 ]
 #slide[
   = Who am I?
   Marcus Müller #link("mailto:mmueller@gnuradio.org")[mmueller\@gnuradio.org]
 
   - GNU Radio Maintainer 2018 – 2021
-  - GNU Radio Maintainer 2025 –
-  - Eletrical engineer, communications engineering
+  - GNU Radio *3* Maintainer 2025 – ?
+  - Electrical engineer, communications engineering
   - Terrible nerd
 
   - Basically raised within the GNU Radio community
 
 ]
 #slide[
-  #sect[Motivation]
+  #sect[Philosophy]
   = Why "do" GNU Radio? (Why am I here?)
   - Progress happens where people talk to each other
   - Talking to each other requires a shared model of the world
@@ -93,6 +98,42 @@
   Real strength: *Community*.
 ]
 #slide[
+  == A maintainer's lament
+  - *Please* don't meatproxy
+  - Stick to community standards
+    - Yes, you need to the official PR template, Claude!
+  - Don't assign copyright to someone else, unless you really mean to.
+
+  #align(center)[*You need to _own_ the code. Don't propose it unless you can explain it*]
+
+  - Maintainer has to read every line
+  - if you didn't, you're not contributing (we can use AI ourselves!)
+    - your expected contribution is negative, if reviewing  code takes longer than writing it
+  - *But, please do open PRs!* if you feel like you want to
+    - fix something you encountered yourself
+    - use this to actually _learn_ about fixing GNU Radio bugs
+    - or you've talked to us on Chat / Mailing List before
+
+]
+#slide[#sect[GNU Radio 3 progress]
+= GNU Radio 3 Progress Report
+  #columns(2, [
+  - GNU Radio 3.10: Bugfixes!
+    - Security ones, too.
+    - Lots of GRC fixes
+  - GNU Radio 3.11: Coming soon to a PC near you!
+  #uncover("2-")[
+    #link("https://gnuradioworld.com")[GNU Radio World]: GRC-alike, but embeddable in websites, strong educational focus
+  
+      Hardware acceleration buffers:\
+      #link("https://github.com/gnuradio/gnuradio/pulls?q=is%3Apr+author%3Awfarah")[`gnuradio/gnuradio` Wael's upstream work]
+    #colbreak()
+    #image("GR for workgroups.svg")
+    ]
+  ]
+  )
+]
+#slide[
   #sect[GNU Radio 4 progress]
   = GNU Radio 4 Progress Report
   - GNU Radio 4 nears a Release Candidate (RC)
@@ -107,6 +148,7 @@
   - Deployable in educational settings
   - Possible to write bindings for
   - Correct, easy-to-use and fast in real-world scenarios
+  - Documentation & Education
 ]
 #slide[
   == Ease of Building
@@ -126,7 +168,6 @@
     - Philip Balister, Toby Flynn on embedded radios
     - Wylie Standage-Beier on OOT infrastructure
     - GSoC offerings (Daniel Estévez et al)
-    - Derek maintains example OOT
 ]
 #slide[
   == Packaging
@@ -166,14 +207,14 @@
 #slide[
   == Script bindings for GR4
   - "Triumph of TensorFlow"
-    - GR3 knew this for about 20 years
     - Winning move is to allow definition of flow in scripting language
-    - Community probably cares more about that than about computational performance
+      - GR3 "knew" this for about 20 years
+    - Community cares much about that
   - Problem: GR4 very C++-heavy
     - Much compile-time optimization
     - But also possible to construct flow graphs at run time
   - First step: Python bindings
-    - Multiple aproaches
+    - Multiple approaches
     - Multi-stakeholder multi-approach (Anthony, Wiley, …)
     - control-plane "shows how it's done" for dynamic bindings
 ]
@@ -188,7 +229,7 @@
   === Ease of use
   - Probably last change before RC: _Settings unification_
     - unifies the interfaces for different settings
-    - reduces tag special cases / design assumptions based on problem domain opinions
+    - reduces tag special cases
     - unifies error handling
 ]
 #slide[
@@ -207,8 +248,6 @@
   = Directions: GNU Radio 3
   - GNU Radio 3: Not going away soon (~ 5 years of foreseeable maintenance)
   - GNU Radio 3: Still new developments
-    - #link("https://gnuradioworld.com")[GNU Radio World]: GRC-alike, but embeddable in websites, strong educational focus
-    - Hardware acceleration buffers: #link("https://github.com/gnuradio/gnuradio/pulls?q=is%3Apr+author%3Awfarah")[`gnuradio/gnuradio` Wael's upstream work]
   - Interoperability: Strong plans for
     - GR4-in-GR3 (simply embed GR4 flow graph in GR3 block)
     - GR3-in-GR4 (extraction of work function, handlers, getters/setters for GR4 block)
